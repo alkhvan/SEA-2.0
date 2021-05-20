@@ -73,23 +73,7 @@ public class PersonRepository  {
         return false;
     }
     public Person[] deleteAll() throws SQLException, ClassNotFoundException {
-        Person[] person = new Person[3];
-        Person person1 = new Person ();
-        person1.setID(1);
-        person1.setSalutation(Salutation.MR);
-        person1.setName("Maier");
-        person1.setSurname("Anna");
-        Person person2 = new Person(2,MR,"Zuckerberg","Mark");
-        Person person3 = new Person(3,MRS,"Baum","Maria");
-        Person person4 = new Person(4,OTHER,"MRMRS","DOG");
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE from personen");
-            preparedStatement.execute();
-            preparedStatement.close();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         return null;
     }
     public boolean get (Person person) throws SQLException, ClassNotFoundException {

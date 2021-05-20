@@ -54,15 +54,15 @@ public class Menu {
                 break;
             case "3":
                 System.out.println("It's 3. Remove the person. Enter the ID.");
-
+                removePerson();
                 break;
             case "4":
                 System.out.println("It's 4. Remove all persons.");
-
+                removeAllPerson();
                 break;
             case "5":
                 System.out.println("It's 5. Get the information about the person. Enter the ID.");
-
+                getPerson();
                 break;
             case "6":
                 System.out.println("It's 6. Get all persons from the list.");
@@ -124,6 +124,25 @@ public class Menu {
 
     private void getAllPersons () throws SQLException, ClassNotFoundException, IllegalAccessException {
         personRepository.getAll();
+    }
+
+    private void getPerson () throws SQLException, ClassNotFoundException {
+        Person p = new Person();
+        System.out.println("Input id to get the person`s info: ");
+        long id = Long.parseLong(scanner.nextLine());
+        p.setID(id);
+        personRepository.get(p);
+    }
+
+    private void removePerson () throws SQLException, ClassNotFoundException {
+        Person p = new Person();
+        System.out.println("Input id to change the person`s info: ");
+        long id = Long.parseLong(scanner.nextLine());
+        p.setID(id);
+        personRepository.delete(p);
+    }
+    private void removeAllPerson () throws SQLException, ClassNotFoundException {
+        personRepository.deleteAll();
     }
 
 }
