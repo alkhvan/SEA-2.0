@@ -1,4 +1,138 @@
 package de.telekom.sea2.persistence;
+import de.telekom.sea2.SeminarApp;
+import de.telekom.sea2.lookup.Salutation;
+import de.telekom.sea2.model.Person;
 
-public class PersonRepository {
+import java.sql.Connection;
+import java.sql.*;
+
+
+import static de.telekom.sea2.lookup.Salutation.*;
+
+
+public class PersonRepository  {
+    private Person[] persons;
+    private Connection connection;
+    private Statement statement;
+    final String DRIVER="com.mysql.cj.jdbc.Driver";
+
+    public PersonRepository() throws SQLException, ClassNotFoundException {
+        Class.forName(DRIVER);
+        this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/personrepository", "akhvan", "seapass");
+        this.statement = connection.createStatement();
+    }
+
+    public void create(Person p)throws SQLException, ClassNotFoundException{
+         try{
+          final String requestSelect = "select * from personen";
+          final String requestInsert ="INSERT into personen (ID, SALUTATION, NAME, SURNAME) values (?,?,?,?)";
+          PreparedStatement preparedStatement = connection.prepareStatement(requestInsert);
+
+          preparedStatement.setLong(1, p.getID());
+          preparedStatement.setString(2, p.getSalutation().toString());
+          preparedStatement.setString(3, p.getName());
+          preparedStatement.setString(4, p.getSurname());
+
+          boolean result ;
+          result = preparedStatement.execute( requestSelect);
+          System.out.println(result);
+          preparedStatement.close();
+ //         connection.close();
+      }
+      catch (SQLException e) {
+          e.printStackTrace();
+      }
+    }
+    public void update(Person person) throws SQLException, ClassNotFoundException {
+        try {
+            final String requestUpdate = "UPDATE personen SET salutation = ?, name = ?, surname =? where ID = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(requestUpdate);
+            preparedStatement.setLong(1, person.getID());
+            preparedStatement.setString(2, person.getSalutation().toString());
+            preparedStatement.setString(3, person.getName());
+            preparedStatement.setString(4, person.getSurname());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public boolean delete(Person person) throws SQLException, ClassNotFoundException {
+        long id = person.getID();
+        try {
+            final String requestDelete = "DELETE from personen where ID = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(requestDelete);
+            preparedStatement.setLong(1, id);
+            preparedStatement.execute();
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public Person[] deleteAll() throws SQLException, ClassNotFoundException {
+        Person[] person = new Person[3];
+        Person person1 = new Person ();
+        person1.setID(1);
+        person1.setSalutation(Salutation.MR);
+        person1.setName("Maier");
+        person1.setSurname("Anna");
+        Person person2 = new Person(2,MR,"Zuckerberg","Mark");
+        Person person3 = new Person(3,MRS,"Baum","Maria");
+        Person person4 = new Person(4,OTHER,"MRMRS","DOG");
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE from personen");
+            preparedStatement.execute();
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public boolean get (Person person) throws SQLException, ClassNotFoundException {
+        long id = person.getID();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from personen where ID = ?");
+            preparedStatement.setLong(1, id);
+            preparedStatement.execute();
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public Person[] getAll () throws SQLException, ClassNotFoundException, IllegalAccessException {
+        ResultSet resultSet = statement.executeQuery("SELECT ID FROM personen");
+        int countPersons =0;
+        while (resultSet.next()) {
+            countPersons = resultSet.getInt(1);
+        }
+        System.out.println("Count of persons are: " + countPersons);
+
+        String result = "select * from personen";
+        Person[] persons = new Person[countPersons];
+        ResultSet resultSet2 = statement.executeQuery(result);
+        int i =0;
+        while(resultSet2.next()) {
+            Person person = new Person();
+            person.setID(resultSet2.getLong(1));
+            person.setSalutation(Salutation.fromString("Mr"));
+            person.setName(resultSet2.getString(3));
+            person.setSurname(resultSet2.getString(4));
+            persons[i]=person;
+            i++;
+
+        }
+        for (int j =0; j<countPersons; j++){
+            System.out.println("ID: " + persons[j].getID());
+            System.out.println("Salutation: " + persons[j].getSalutation());
+            System.out.println("Name: " + persons[j].getName());
+            System.out.println("Surname: " + persons[j].getSurname());
+        }
+        return persons;
+    }
 }
