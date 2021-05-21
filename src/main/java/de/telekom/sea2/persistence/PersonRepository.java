@@ -44,14 +44,17 @@ public class PersonRepository  {
       }
     }
     public void update(Person person) throws SQLException, ClassNotFoundException {
+        long id = person.getID();
         try {
             final String requestUpdate = "UPDATE personen SET salutation = ?, name = ?, surname =? where ID = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(requestUpdate);
-            preparedStatement.setLong(1, person.getID());
-            preparedStatement.setString(2, person.getSalutation().toString());
-            preparedStatement.setString(3, person.getName());
-            preparedStatement.setString(4, person.getSurname());
-            preparedStatement.executeUpdate();
+   //         preparedStatement.setLong(1, id);
+            preparedStatement.setLong(4, person.getID());
+            preparedStatement.setString(1, person.getSalutation().toString());
+            preparedStatement.setString(2,person.getName());
+            preparedStatement.setString(3,person.getSurname());
+
+            preparedStatement.execute();
             preparedStatement.close();
 
         } catch (SQLException e) {

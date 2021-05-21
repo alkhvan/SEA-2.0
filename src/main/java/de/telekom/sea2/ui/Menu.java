@@ -103,23 +103,23 @@ public class Menu {
         personRepository.create(p);
     }
     private void updatePerson() throws IllegalAccessException, SQLException, ClassNotFoundException {
-        Person p = new Person();
+        Person person = new Person();
         System.out.println("Input id to change the person`s info: ");
         long id = Long.parseLong(scanner.nextLine());
-        p.setID(id);
+        person.setID(id);
 
         System.out.println("Input new salutation: ");
         Salutation salutation = Salutation.fromString(scanner.nextLine());
-        p.setSalutation(salutation);
+        person.setSalutation(salutation);
 
         System.out.println("Input new firstname: ");
         String firstname = scanner.nextLine();
-        p.setName(firstname);
+        person.setName(firstname);
 
         System.out.println("Input new lastname: ");
         String surname = scanner.nextLine();
-        p.setSurname(surname);
-        personRepository.update(p);
+        person.setSurname(surname);
+        personRepository.update(person);
     }
 
     private void getAllPersons () throws SQLException, ClassNotFoundException, IllegalAccessException {

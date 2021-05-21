@@ -12,12 +12,14 @@ public enum Salutation {
                 case "Mr":
                 case "mister":
                 case "Mister":
+                case "Woman":
                     return MR;
                 case "MRS":
                 case "mrs":
                 case "Mrs":
                 case "Misses":
                 case "misses":
+                case "Men":
                     return MRS;
                 case "OTHER":
                 case "other":

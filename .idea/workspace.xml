@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="48f70604-4f7c-4cb1-acb8-fe9a805f8a79" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/telekom/sea2/lookup/Salutation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/telekom/sea2/lookup/Salutation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/telekom/sea2/persistence/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/telekom/sea2/persistence/PersonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/telekom/sea2/ui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/telekom/sea2/ui/Menu.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/lookup/Salutation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="33" />
+            <state relative-caret-position="124">
+              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -100,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/ui/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
+            <state relative-caret-position="323">
+              <caret line="116" column="34" lean-forward="true" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/persistence/PersonRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
+            <state relative-caret-position="264">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,9 +147,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/de/telekom/sea2/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/telekom/sea2/SeminarApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/telekom/sea2/lookup/Salutation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/de/telekom/sea2/ui/Menu.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/telekom/sea2/model/Person.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/telekom/sea2/ui/Menu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/de/telekom/sea2/lookup/Salutation.java" />
         <option value="$PROJECT_DIR$/src/main/java/de/telekom/sea2/persistence/PersonRepository.java" />
       </list>
     </option>
@@ -370,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621581070074</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="get all methode was updated">
+      <created>1621587407518</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1621587407518</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -390,16 +399,16 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.4362416" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.3988495" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.5637584" />
+      <window_info active="true" anchor="bottom" id="Debug" order="7" visible="true" weight="0.3988495" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven" order="3" sideWeight="0.49829933" visible="true" weight="0.08955224" />
-      <window_info anchor="right" id="Coverage" order="4" sideWeight="0.5017007" side_tool="true" visible="true" weight="0.08955224" />
+      <window_info anchor="right" id="Maven" order="3" sideWeight="0.49920255" visible="true" weight="0.08955224" />
+      <window_info anchor="right" id="Coverage" order="4" sideWeight="0.50079745" side_tool="true" visible="true" weight="0.08955224" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -414,7 +423,8 @@
     <MESSAGE value="menu was added: not tested" />
     <MESSAGE value="delete all methode was added" />
     <MESSAGE value="get methode was updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="get methode was updated" />
+    <MESSAGE value="get all methode was updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="get all methode was updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -431,11 +441,29 @@
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/persistence/PersonRepository.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/persistence/PersonRepository.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/persistence/PersonRepository.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SEA_2_0$Main.ic" NAME="Main Coverage Results" MODIFIED="1621587379121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SEA_2_0$Main.ic" NAME="Main Coverage Results" MODIFIED="1621594086215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>de.telekom.sea2.*</FILTER>
     </SUITE>
   </component>
@@ -468,33 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/SeminarApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/ui/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/lookup/Salutation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/model/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
@@ -520,10 +521,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/SeminarApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/ui/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="116" column="34" lean-forward="true" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/lookup/Salutation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/de/telekom/sea2/persistence/PersonRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
+        <state relative-caret-position="264">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
