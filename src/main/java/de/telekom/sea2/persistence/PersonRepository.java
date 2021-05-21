@@ -73,8 +73,16 @@ public class PersonRepository  {
         return false;
     }
     public Person[] deleteAll() throws SQLException, ClassNotFoundException {
+        try {
+            final String requestDelete = "DELETE from personen";
+            PreparedStatement preparedStatement = connection.prepareStatement(requestDelete);
+            preparedStatement.execute();
+            preparedStatement.close();
 
-        return null;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return persons;
     }
     public boolean get (Person person) throws SQLException, ClassNotFoundException {
         long id = person.getID();
