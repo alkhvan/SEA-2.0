@@ -87,7 +87,8 @@ public class PersonRepository  {
     public boolean get (Person person) throws SQLException, ClassNotFoundException {
         long id = person.getID();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from personen where ID = ?");
+            final String requestGet = "select * from personen where ID = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(requestGet);
             preparedStatement.setLong(1, id);
             preparedStatement.execute();
             preparedStatement.close();
