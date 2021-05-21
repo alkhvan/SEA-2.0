@@ -24,7 +24,7 @@ public class PersonRepository  {
 
     public void create(Person p)throws SQLException, ClassNotFoundException{
          try{
-          final String requestSelect = "select * from personen";
+ //         final String requestSelect = "select * from personen";
           final String requestInsert ="INSERT into personen (ID, SALUTATION, NAME, SURNAME) values (?,?,?,?)";
           PreparedStatement preparedStatement = connection.prepareStatement(requestInsert);
 
@@ -34,7 +34,7 @@ public class PersonRepository  {
           preparedStatement.setString(4, p.getSurname());
 
           boolean result ;
-          result = preparedStatement.execute( requestSelect);
+          result = preparedStatement.execute( );
           System.out.println(result);
           preparedStatement.close();
  //         connection.close();
@@ -87,10 +87,17 @@ public class PersonRepository  {
     public boolean get (Person person) throws SQLException, ClassNotFoundException {
         long id = person.getID();
         try {
-            final String requestGet = "select * from personen where ID = ?";
+            final String requestGet = "SELECT * FROM personen WHERE ID = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(requestGet);
             preparedStatement.setLong(1, id);
             preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.executeQuery( );
+            while(resultSet.next()) {
+                System.out.println("ID: "+ resultSet.getLong(1));
+                System.out.println("Salutation: "+ resultSet.getString(2));
+                System.out.println("Name: "+ resultSet.getString(3));
+                System.out.println("Surname: "+ resultSet.getString(4));
+            }
             preparedStatement.close();
 
         } catch (SQLException e) {
@@ -113,7 +120,7 @@ public class PersonRepository  {
         while(resultSet2.next()) {
             Person person = new Person();
             person.setID(resultSet2.getLong(1));
-            person.setSalutation(Salutation.fromString("Mr"));
+            person.setSalutation(Salutation.fromString(resultSet2.getString(2)));
             person.setName(resultSet2.getString(3));
             person.setSurname(resultSet2.getString(4));
             persons[i]=person;
