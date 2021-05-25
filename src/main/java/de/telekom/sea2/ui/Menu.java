@@ -11,18 +11,22 @@ import java.util.Scanner;
 public class Menu {
     private Scanner scanner = new Scanner(System.in);
     PersonRepository personRepository = new PersonRepository();
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_BLACK = "\u001B[30m";
 
     public Menu() throws SQLException, ClassNotFoundException {
     }
 
     public void showMenu() {
-        System.out.println("1 - create new person in Seminar DB");
-        System.out.println("2 - update person in Seminar DB");
-        System.out.println("3 - remove person from Seminar DB by ID");
-        System.out.println("4 - remove all persons from Seminar DB");
-        System.out.println("5 - get person from Seminar DB by ID");
-        System.out.println("6 - get all persons from Seminar DB");
-        System.out.println("0 - exit");
+        System.out.println(ANSI_GREEN +"1 - create new person in Seminar DB" + ANSI_GREEN);
+        System.out.println(ANSI_GREEN + "2 - update person in Seminar DB" + ANSI_GREEN);
+        System.out.println(ANSI_RED + "3 - remove person from Seminar DB by ID" + ANSI_RED);
+        System.out.println(ANSI_RED + "4 - remove all persons from Seminar DB" + ANSI_RED);
+        System.out.println(ANSI_BLUE + "5 - get person from Seminar DB by ID" + ANSI_BLUE);
+        System.out.println(ANSI_BLUE + "6 - get all persons from Seminar DB" + ANSI_BLUE);
+        System.out.println(ANSI_BLACK + "0 - exit" + ANSI_BLACK);
     }
     public String inputLine() {
 
@@ -104,21 +108,6 @@ public class Menu {
     }
     private void updatePerson() throws IllegalAccessException, SQLException, ClassNotFoundException {
         Person person = new Person();
-        System.out.println("Input id to change the person`s info: ");
-        long id = Long.parseLong(scanner.nextLine());
-        person.setID(id);
-
-        System.out.println("Input new salutation: ");
-        Salutation salutation = Salutation.fromString(scanner.nextLine());
-        person.setSalutation(salutation);
-
-        System.out.println("Input new firstname: ");
-        String firstname = scanner.nextLine();
-        person.setName(firstname);
-
-        System.out.println("Input new lastname: ");
-        String surname = scanner.nextLine();
-        person.setSurname(surname);
         personRepository.update(person);
     }
 
