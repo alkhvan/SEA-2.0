@@ -91,19 +91,27 @@ public class Menu {
         Person p = new Person();
         System.out.println("Input id: ");
         long id = Long.parseLong(scanner.nextLine());
-        p.setID(id);
+        try{p.setID(id);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
 
         System.out.println("Input salutation: ");
         Salutation salutation = Salutation.fromString(scanner.nextLine());
-        p.setSalutation(salutation);
+        try{p.setSalutation(salutation);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
 
         System.out.println("Input firstname: ");
         String firstname = scanner.nextLine();
-        p.setName(firstname);
+        try{ p.setName(firstname);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
 
         System.out.println("Input lastname: ");
         String surname = scanner.nextLine();
-        p.setSurname(surname);
+        try{ p.setSurname(surname);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
         personRepository.create(p);
     }
     private void updatePerson() throws IllegalAccessException, SQLException, ClassNotFoundException {
@@ -112,22 +120,28 @@ public class Menu {
     }
 
     private void getAllPersons () throws SQLException, ClassNotFoundException, IllegalAccessException {
-        personRepository.getAll();
+      try{personRepository.getAll();}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
     }
 
     private void getPerson () throws SQLException, ClassNotFoundException {
         Person p = new Person();
         System.out.println("Input id to get the person`s info: ");
         long id = Long.parseLong(scanner.nextLine());
-        p.setID(id);
-        personRepository.get(p);
+        try{ p.setID(id);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
+         personRepository.get(p);
     }
 
     private void removePerson () throws SQLException, ClassNotFoundException {
         Person p = new Person();
         System.out.println("Input id to change the person`s info: ");
         long id = Long.parseLong(scanner.nextLine());
-        p.setID(id);
+        try{ p.setID(id);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
         personRepository.delete(p);
     }
     private void removeAllPerson () throws SQLException, ClassNotFoundException {

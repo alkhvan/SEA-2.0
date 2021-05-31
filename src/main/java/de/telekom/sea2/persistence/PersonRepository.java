@@ -89,22 +89,31 @@ public class PersonRepository {
     }
 
     public void updateAll(Person person) throws SQLException, ClassNotFoundException, IllegalAccessException {
+        Person p = new Person();
         System.out.println("Input id to change the person`s info: ");
         long id = Long.parseLong(scanner.nextLine());
-        person.setID(id);
+        try{person.setID(id);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
 
         System.out.println("Input new salutation: ");
         Salutation salutation = Salutation.fromString(scanner.nextLine());
-        person.setSalutation(salutation);
+        try {person.setSalutation(salutation);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
 
         System.out.println("Input new firstname: ");
         String firstname = scanner.nextLine();
-        person.setName(firstname);
+        try {person.setName(firstname);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
 
         System.out.println("Input new lastname: ");
         String surname = scanner.nextLine();
         person.setSurname(surname);
-        id = person.getID();
+        try{id = person.getID();}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
         try {
             final String requestUpdate = "UPDATE personen SET salutation = ?, name = ?, surname =? where ID = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(requestUpdate);
@@ -124,11 +133,17 @@ public class PersonRepository {
     public void updateName (Person person) throws SQLException, ClassNotFoundException {
         System.out.println("Input id to change the person`s info: ");
         long id = Long.parseLong(scanner.nextLine());
-        person.setID(id);
+        try {person.setID(id);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
         System.out.println("Input new firstname: ");
         String firstname = scanner.nextLine();
-        person.setName(firstname);
-        id = person.getID();
+        try {person.setName(firstname);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
+        try {id = person.getID();}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
         try {
             final String requestUpdate = "UPDATE personen SET name = ? where ID = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(requestUpdate);
@@ -145,7 +160,10 @@ public class PersonRepository {
     public void updateSurname (Person person) throws SQLException, ClassNotFoundException {
         System.out.println("Input id to change the person`s info: ");
         long id = Long.parseLong(scanner.nextLine());
-        person.setID(id);
+        try {person.setID(id);}
+        catch (Exception e){
+            System.out.println(e.getMessage());}
+
 
         System.out.println("Input new lastname: ");
         String surname = scanner.nextLine();
