@@ -16,19 +16,20 @@ public class TestPerson {
     }
     @Test
     void setFirstname_test(){
-        fail();
-        Assertions.fail();
+//        fail();
+//        Assertions.fail();
         cut.setSurname("Anna");
         var result = cut.getSurname();
         assertEquals("Anna", result);
+        assertSame("Anna",result);
     }
-    void setFirstname_null_test(){
-        fail();
-        Assertions.fail();
-        cut.setSurname(null);
-        var result = cut.getSurname();
-        assertNull(null, result);
-    }
+//    void setFirstname_null_test(){
+//        fail();
+//        Assertions.fail();
+//        cut.setSurname(null);
+//        var result = cut.getSurname();
+//        assertNull(null, result);
+//    }
 
 
     @AfterEach
